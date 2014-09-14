@@ -60,3 +60,27 @@ class Main extends Activity with AsyncActivity {
 Life is good.
 
 Credits to [Sung-Ho Lee](https://github.com/pocorall) for his blog post [here](http://blog.scaloid.org/2013/11/using-scalaconcurrentfuture-in-android.html)
+
+Installation
+------------
+
+No, it's not on Maven Central. Take the file `app/libs/library.aar`, maybe rename it to `asyncactivity.aar`, and put it
+in your project's libs folder. Modify your build.gradle like such:
+
+```Groovy
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+dependencies {
+    compile(name:'asyncactivity', ext:'aar')
+    // Other dependencies
+}
+```
+
+
+
+
+
+
