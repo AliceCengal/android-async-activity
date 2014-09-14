@@ -1,9 +1,9 @@
 Android AsyncActivity
 =====================
-*A small addon to mate android.app.Activity with scala.util.Future*
+*A small addon to mate android.app.Activity with scala.concurrent.Future*
 
-An easy way to execute an asynchronous job in Scala is to wrap the procedure in a `scala.util.Future`, and then do 
-monadic transformation on the returned Future object.
+An easy way to execute an asynchronous job in Scala is to wrap the procedure in a `scala.concurrent.Future`, and 
+then do monadic transformation on the returned Future object.
 
 ```scala
 val futureObject: Future[DomainObject] = Future {
@@ -36,8 +36,8 @@ def onFailureForUi[U](pf: PartialFunction[Throwable, U])
                      (implicit executor: ExecutionContext): Unit
 ```
 
-These methods are equivalent to the normal ones defined on scala.util.Future, except that they are guaranteed to run 
-the callback on the UI thread.
+These methods are equivalent to the normal ones defined on scala.concurrent.Future, except that they are guaranteed 
+to run the callback on the UI thread.
 
 ```scala
 class Main extends Activity with AsyncActivity {
@@ -59,13 +59,14 @@ class Main extends Activity with AsyncActivity {
 
 Life is good.
 
-Credits to [Sung-Ho Lee](https://github.com/pocorall) for his blog post [here](http://blog.scaloid.org/2013/11/using-scalaconcurrentfuture-in-android.html)
+Credits to [Sung-Ho Lee](https://github.com/pocorall) for his blog post 
+[here](http://blog.scaloid.org/2013/11/using-scalaconcurrentfuture-in-android.html)
 
 Installation
 ------------
 
-No, it's not on Maven Central. Take the file `app/libs/library.aar`, maybe rename it to `asyncactivity.aar`, and put it
-in your project's libs folder. Modify your build.gradle like such:
+No, it's not on Maven Central. Take the file `app/libs/library.aar`, maybe rename it to `asyncactivity.aar`, and put 
+it in your project's libs folder. Modify your build.gradle like such:
 
 ```Groovy
 repositories {
