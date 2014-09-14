@@ -25,11 +25,14 @@ defined, which is a major problem if you want to update the UI based on the resu
 The trait `AsyncActivity` has an implicit conversion that adds methods to Future objects with `ForUi` suffix.
 
 ```scala
-def onCompleteForUi[U](f: (Try[T]) ⇒ U)(implicit executor: ExecutionContext): Unit
+def onCompleteForUi[U](f: (Try[T]) ⇒ U)
+                      (implicit executor: ExecutionContext): Unit
 
-def onSuccessForUi[U](pf: PartialFunction[T, U])(implicit executor: ExecutionContext): Unit
+def onSuccessForUi[U](pf: PartialFunction[T, U])
+                     (implicit executor: ExecutionContext): Unit
 
-def onFailureForUi[U](pf: PartialFunction[Throwable, U])(implicit executor: ExecutionContext): Unit
+def onFailureForUi[U](pf: PartialFunction[Throwable, U])
+                     (implicit executor: ExecutionContext): Unit
 ```
 
 These methods are equivalent to the normal ones defined on scala.util.Future, except that they are guaranteed to run 
