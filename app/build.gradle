@@ -30,7 +30,8 @@ repositories {
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile(name:'library', ext:'aar')
     compile 'org.scala-lang:scala-library:2.11.1'
     compile 'com.squareup.okhttp:okhttp:2.0.0'
+    compile(name:'library', ext:'aar')
+    //compile project(':library')
 }
