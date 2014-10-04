@@ -45,6 +45,16 @@ class UiFuture[T](future: Future[T], activity: Activity) {
     }
   }
 
+  def andThenForUi[U](pf: PartialFunction[Try[T], U])
+                     (implicit executor: ExecutionContext): Future[T] = {
+    future.andThen {
+      case result: Try[T] =>
+        activity.runOnUiThread(new Runnable() {
+          override def run(): Unit = pf(result)
+        })
+    }
+  }
+
 }
 
 
