@@ -10,7 +10,7 @@
         android:label="Async Activity"
         android:theme="@android:style/Theme.DeviceDefault" >
         <activity
-            android:name=".samplepackage.PackageMain"
+            android:name=".Main"
             android:label="Async Activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

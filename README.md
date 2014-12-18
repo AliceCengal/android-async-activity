@@ -79,3 +79,23 @@ dependencies {
     // Other dependencies
 }
 ```
+
+#### UPDATE 2014/12/18: 
+
+The library is hosted on Github. To include in your project, add the Github repository to your dependencies. 
+
+
+```Groovy
+repositories {
+    maven {
+        url 'https://github.com/AliceCengal/android-async-activity/raw/master/library/release'
+    }
+}
+
+dependencies {
+    // Other dependencies
+    // ...
+    compile 'com.cengallut:asyncactivity:1.1.0'
+}
+```
+

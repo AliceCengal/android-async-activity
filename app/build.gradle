@@ -26,14 +26,15 @@ android {
         abortOnError false
     }
 }
+
 repositories {
-    flatDir {
-        dirs 'libs'
+    maven {
+        url 'https://github.com/AliceCengal/android-async-activity/raw/master/library/release'
     }
 }
+
 dependencies {
     compile 'org.scala-lang:scala-library:2.11.4'
     compile 'com.squareup.okhttp:okhttp:2.0.0'
-    //compile(name:'library', ext:'aar')
-    compile project(':library')
+    compile 'com.cengallut:asyncactivity:1.1.0'
 }
